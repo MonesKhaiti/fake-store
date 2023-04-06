@@ -50,7 +50,7 @@ const Navbar = () => {
 							<Link href="" className="btn btn-outline-dark ms-2">
 								<i className="fa fa-sign-in me-1" />Register
 							</Link>
-							<Link href="" className="btn btn-outline-dark ms-2">
+							<Link to="/cart" className="btn btn-outline-dark ms-2">
 								<i className="fa fa-sign-in me-1" />Cart
 							</Link>
 						</div>

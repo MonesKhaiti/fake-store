@@ -1,5 +1,8 @@
+import { StoreContext } from "../context";
+import { useContext } from "react";
+
 export const ShowProduct = ({ product }) => {
-    console.log(product)
+ const {addItem}= useContext(StoreContext)
     return (
         <>
             <div className='col-md-6'>
@@ -14,7 +17,7 @@ export const ShowProduct = ({ product }) => {
                 </p>
                 <h3 className='display-6 fw-bold my-4'>${product?.price}</h3>
                 <p className='lead'>{product?.description}</p>
-                <button className='btn btn-outline-dark'>Add to Cart</button>
+                <button onClick={()=> addItem(product)} className='btn btn-outline-dark'>Add to Cart</button>
             </div>
         </>
     );
