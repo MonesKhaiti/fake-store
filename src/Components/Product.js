@@ -8,15 +8,18 @@ const Product = () => {
 	const [ product, setProduct ] = useState({});
 	const [ loading, setLoading ] = useState(false);
 	console.log('single product ', product);
-	useEffect(() => {
-		const getProduct = async () => {
-			setLoading(true);
-			const response = await fetch(`https://fakestoreapi.com/products/${id}`);
-			setProduct(await response.json());
-			setLoading(false);
-		};
-		getProduct();
-	}, []);
+	useEffect(
+		() => {
+			const getProduct = async () => {
+				setLoading(true);
+				const response = await fetch(`https://fakestoreapi.com/products/${id}`);
+				setProduct(await response.json());
+				setLoading(false);
+			};
+			getProduct();
+		},
+		[ id ]
+	);
 	return (
 		<div className="container">
 			<div className="row mt-5">

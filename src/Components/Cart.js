@@ -10,7 +10,7 @@ export const Cart = () => {
 				<div key={id}>
 					<h3>{title}</h3>
 					<h3>{price}</h3>
-					<img src={image} alt="Example" />
+					<img src={image} alt="img" />
 				</div>
 			))}
 		</div>
