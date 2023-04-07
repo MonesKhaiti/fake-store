@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Products = () => {
@@ -6,7 +6,7 @@ const Products = () => {
 	const [ data, setData ] = useState([]);
 	const [ filter, setFilter ] = useState(data);
 	const [ loading, setLoading ] = useState(false);
-	let componentMounted = true;
+	let componentMounted = useRef(true);
 
 	useEffect(() => {
 		const getProducts = async () => {
@@ -23,6 +23,10 @@ const Products = () => {
 				componentMounted = false;
 			};
 		};
+
+		if (loading) {
+			return <div>Loading...</div>;
+		}
 
 		getProducts();
 	}, []);
